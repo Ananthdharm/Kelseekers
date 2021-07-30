@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet" 
+    />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+    <link rel="stylesheet" href="./stylesheets.css">
+    <title>Kelseekers</title>
+</head>
+
+<body>
+    <h1>
+        Kelseekers
+    </h1>
+    <p>Your possible results are</p>
+    <div class="main-container">
+        <h2 id="role">{{ sugrole }}</h2>
+        <h3 id="sal">Expected Annual Salary- Rs. </h3>
+        <p id="desc"></p>
+        <h2 id="role">Opportunities available now</h2>
+    </div>    
+        <div class="thisbox">
+        {%for i in range(0,len)%}
+        <div class = "thatbox">
+        <h2 id="role">{{ jbr[i] }}</h2>
+        <h3 id="sal">{{ comp[i] }}</h3>
+        <h3 id="desc">{{ loc[i] }}</h3>
+        <a href="http://">More info</a>
+        </div>
+        <!-- <div class="separator" ></div> -->
+        
+        {% endfor %}
+        </div>
+    
+        <div class="bottom ">
+        <p id="leftside"><br>Kelseekers, 2020</p>
+        <p id="rightside">Batch 2018-22<br>ISE, BMSIT&M<br>Karan, Ananth, Adarsh.</p>
+    </div>
+    <script>
+
+        let role = document.getElementById("role").innerHTML;
+        let amt = "error; couldn't fetch data.";
+        let description = "error; couldn't fetch data.";
+
+        switch(role){
+
+            case "Database Developer" : amt = "6,45,923"; description = "Database Developers, also called database programmers, are primarily responsible for creating and implementing computer databases. They determine the best database management system for a particular client, as well as test database programs for efficiency and performance and troubleshoot and correct problems."; break;
+
+            case "Portal Administrator" : amt = "4,25,000"; description = "Develop all portal layout and maintain functionality of all site. Supervise content for all pages and provide assistance to all personnel and external organizations. Monitor and analyze all system metrics and maintain optimal performance for all portals."; break;
+
+            case "Systems Security Administrator" : amt = "9,00,000"; description = "A security systems administrator handles all aspects of information security and protects the virtual data resources of a company. They are responsible for desktop, mobile, and network security, and are also responsible for installing, administering and troubleshooting an organization's security solutions."; break;
+
+            case "Business Systems Analys" : amt = "8,88,677"; description = "A Business Systems Analyst monitors and recommends improvements to an organization's software, hardware and business systems. The Business Systems Analyst works closely with executive team members to understand business and client requirements and implement processes to meet those needs."; break;
+
+            case "Software Systems Engineer" : amt = "4,20,000"; description = "Computer systems software engineers conceptualize, design, construct, install, maintain and repair computer systems. They advise users regarding the technical direction of their computer systems based on their needs. They may recommend making changes to an existing system or installing an entirely new system."; break;
+
+            case "Business Intelligence Analyst" : amt = "6,36,960 "; description = "Review and validate customer data as it's collected. Oversee the deployment of data to the data warehouse. Develop policies and procedures for the collection and analysis of data. Create or discover new data procurement and processing programs."; break;
+
+            case "CRM Technical Developer" : amt = "11,83,896"; description = "Design, code, test program or CRM application modules that meet Architecture Blueprint specification. Participate in execution and documentation of tests ensuring that an application or architecture meets agreed Quality standards. Assist in the integration of application components."; break;
+
+            case "Mobile Applications Developer" : amt = "5,43,697"; description = "As a Mobile developer, you'll collaborate with internal teams to develop functional mobile applications, while working in a fast-paced environment. Ultimately, you should be able to design and build the next generation of our mobile applications."; break;
+
+            case "UX Designer" : amt = "13,43,126"; description = "UX designers turn applications into something that people like and want to use. UX (user experience) designers measure and optimise applications (usually web based) to improve ease of use (usability), and create the best user experience by exploring many different approaches to solve end-users' problems."; break;
+
+            case "Quality Assurance Associate" : amt = "6,08,769"; description = ":Also called quality assurance auditors and quality assurance specialists, QA associates maintain the quality systems, such as laboratory control, investigation management, materials management, document control and training to ensure control of the manufacturing process."; break;
+
+            case "Web Developer" : amt = " 3,92,627"; description = "A Web Developer is responsible for the coding, design and layout of a website according to a company's specifications. As the role takes into consideration user experience and function, a certain level of both graphic design and computer programming is necessary."; break;
+
+            case "Information Security Analyst" : amt = "5,66,771"; description = "As an Information Security Analyst, you will design and implement IT security systems to protect the organization's computer networks from cyber attacks. You will also help develop organization wide best practices for IT security. You will monitor computer networks for security issues, install security software and document all security issues or breaches you find."; break;
+
+            case "CRM Business Analyst": amt = "875570"; description = "CRM business analysts look at a business’s existing client base and data to help companies resolve problem areas and keep up their momentum. Businesses hire these professionals so that they can make sense of their customers’ long-term habits. Once they understand how their customers think, companies can divert more energy into specific advertising strategies, such as email promotions or new products."; break;
+
+            case "Technical Support": amt = "329236"; description = "Technical Support is a position hired by a company to oversee and maintain their computer hardware and software systems. Their skills are an asset to the company, as they assist in resolving technical issues concerning customer's accounts or company software infrastructure."; break;
+
+            case "Project Manager": amt = "1506194"; description = "Project managers are change agents: they make project goals their own and use their skills and expertise to inspire a sense of shared purpose within the project team. They enjoy the organized adrenaline of new challenges and the responsibility of driving business results. They work well under pressure and are comfortable with change and complexity in dynamic environments. They can shift readily between the big picture and the small-but-crucial details, knowing when to concentrate on each."; break;
+
+            case "Information Technology Manager": amt = "1277533"; description = "An Information Technology Manager is responsible for implementing and maintaining an organization's technology infrastructure. Businesses rely on a central information processing system to support efficient data management and communications";  break;
+
+            case "Programmer Analyst" : amt = "415790"; description = "Programmer analysts perform the jobs of both a systems analyst and a computer programmer. While systems analysts design and develop software and computer systems, Computer Programmers are responsible for implementing designs by writing computer programs."; break;
+
+            case "Design & UX" : amt = "663463"; description = "UX designers combine market research, product development, strategy and design to create seamless user experiences for products, services and processes. They build a bridge to the customer, helping the company to better understand and fulfil their needs and expectations."; break;
+
+            case "Solutions Architect" : amt = "705799"; description = "Solutions architects are in charge of creating, designing, and implementing arrangements within a business. They help to build new systems needed by the company and must be able to identify the business' current problems and future technological goals. They are also in charge of communicating with other departments to implement new plans and goals."; break;
+
+            case "Systems Analyst" : amt = "648661"; description = "They must be adept at investigating problems and fixing them in the most efficient way possible. Systems analysts must be knowledgeable in programming languages, operating systems and hardware. Those hoping to work in this field must be educated in technology, and they must be able to keep up with the quickly changing world of software."; break;
+
+            case "Network Security Administrator" : amt = "498879"; description = "A network security administrator primarily ensures that a network is secured from any internal or external security threats and incidents. This individual is part of a network operations and management team."; break;
+
+            case "Data Architect" : amt = "1967356"; description = "Data architects create blueprints for data management systems. After assessing a company’s potential data sources (internal and external), architects design a plan to integrate, centralize, protect and maintain them. This allows employees to access critical information in the right place, at the right time."; break;
+
+            case "Software Developer" : amt = "495097"; description = "Software developers are the creative minds behind software programs, and they have the technical skills to build those programs or to oversee their creation by a team. They create software that enables users to perform specific tasks on computer devices."; break;
+
+            case "E-Commerce Analyst" : amt = "294791"; description = "An e-commerce analyst looks specifically at transactions that occur on the Internet and researches ways to improve on existing sales goals. A successful e-commerce analyst leverages data about the users he services to improve the conversion rate of the companies he works for."; break;
+
+            case "Technical Services/Help Desk/Tech Support" : amt = "229507"; description = "Technical support officers monitor and maintain the computer systems and networks of an organisation. You will be installing and configuring computer systems, diagnosing hardware and software faults and solving technical and applications problems, either over the phone or in person."; break;
+
+            case "Information Technology Auditor": amt = "537557"; description = "An information technology auditor is responsible for the internal controls and risks within a company’s technology system. He actively monitors the system to ensure it follows policies and best practices. This usually involves studying the technologies used and identifying points of weaknesses. He then prepares a report on his findings and recommends a suitable course of action."; break;
+
+            case "Database Manage" : amt = "493897"; description = "Database Managers oversee an organization’s data storage and retrieval system. They might also be referred to as Database Administrators. They also devise disaster recovery plans, upgrade databases as needed, install and test new software and run back-up programs to prevent the loss of any data. Database Managers also assess company needs in regards to data storage and access and create databases to meet these needs."; break;
+
+            case "Applications Developer" : amt = "441114"; description = "Also known as a Software Developer or Software Architect, an Application Developer is responsible for developing and modifying source code for software applications. These applications are aimed at aiding customers with computer tasks or programs."; break;
+
+            case "Database Administrator" : amt = "412986"; description = "Database administrators or managers create and maintain databases compatible with their companies’ needs. These information technology (IT) professionals oversee database updates, storage, security, and troubleshooting."; break;
+
+            case "Network Engineer" : amt = "301817"; description = "A network engineer is a technology professional who has the necessary skills to plan, implement and oversee the computer networks that support in-house voice, data, video and wireless network services."; break;
+
+            case "Software Engineer" : amt = "531524"; description = "A software engineer applies mathematical analysis and the principles of computer science in order to design and develop computer software. There are many types of software that a software engineer can develop, such as operating systems, computer games, middleware, business applications and network control systems."; break;
+
+            case "Technical Engineer" : amt = "269211"; description = "A Technical Engineer is usually hired by businesses to maintain their computer hardware and software systems. Their skills assist the company in resolving technical issues concerning customer's accounts or company software infrastructure. A Technical Engineer will also support flawless computer software integration by diagnosing and troubleshooting common problems. Employees holding this job title generally begin in IT or IT Assistant roles."; break;
+
+            case "Network Security Engineer" : amt = "506353"; description = "Network security engineers are responsible for the provisioning, deployment, configuration, and administration of many different pieces of network and security-related hardware and software. These include firewalls, routers, switches, various network-monitoring tools, and virtual private networks (VPNs)"; break;
+
+            case "Software Quality Assurance (QA) / Testing" : amt = "308065"; description = "QA includes activities that ensure the implementation of processes, procedures and standards in context to verification of developed software and intended requirements."; break;
+
+        }
+        document.getElementById("sal").append(amt); 
+        document.getElementById("desc").append(description);
+    </script>
+</body>
+</html>

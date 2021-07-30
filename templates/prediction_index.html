@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet" 
+    />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/fonts/fontawesome-free-5.3.1-web/css/all.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <script src="https://kit.fontawesome.com/338bcb382a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+    <title>Kelseekers</title>
+</head>
+<body>
+    <h1>
+        Kelseekers
+    </h1>
+    <p>
+        The Machine Learning model we have built provides personalization to its users. This means to say that, every user based on their skills and interested domains are provided with a personalized prediction. This model will take into consideration various parameters depending on the employability factors and other parameters like a user’s GPA, Internships and their Major. This helps users discover their weak spots and the skills they need in order to secure their desired job.    </p>
+    <div class="main-container">
+        <form method="POST" action="{{url_for('home')}}">
+            <div class="flexers">
+                <label for="q1">Percentage in Operating Systems</label>
+                <input class="number" name="q1" type="number" id="q1" min="0" max="100" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q2">Percentage in Algorithms</label>
+                <input class="number" name="q2" type="number" id="q2" min="0" max="100" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q3">Percentage in Programming Concepts</label>
+                <input class="number" name="q3" type="number" id="q3" min="0" max="100" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q4">Percentage in Software Engineering</label>
+                <input class="number" name="q4" type="number" id="q4" min="0" max="100" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q5">Percentage in Computer Networks</label>
+                <input class="number" name="q5" type="number" id="q5" min="0" max="100" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q6">Percentage in Electronics Subjects</label>
+                <input class="number" name="q6" type="number" id="q6" min="0" max="100" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q7">Percentage in Computer Architecture</label>
+                <input class="number" name="q7" type="number" id="q7" min="0" max="100" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q8">Percentage in Mathematics</label>
+                <input class="number" name="q8" type="number" id="q8" min="0" max="100" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q9">Percentage in Communication Skills</label>
+                <input class="number" name="q9" type="number" id="q9" min="0" max="100" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q10">Hours working per day</label>
+                <input class="number" name="q10" type="number" id="q10" min="0" max="24" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q11">Logical Quotient Rating</label>
+                <input class="number" name="q11" type="number" id="q11" min="0" max="10" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q12">Hackathons</label>
+                <input class="number" name="q12" type="number" id="q12" min="0" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q13">Coding Skills Rating</label>
+                <input class="number" name="q13" type="number" id="q13" required />
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <label for="q14">Public Speaking Points</label>
+                <input class="number" name="q14" type="number" id="q14" min="0" max="10" required />
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Can work long time before system?</label>
+                <div class="radiobtn">
+                    <div>
+                    <div>
+                        <input name="q15" type="radio" value="yes" checked>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input name="q15" type="radio" value="no">
+                        <label for="no">No</label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Self Learning Capability</label>
+                <div class="radiobtn">
+                <div>
+                        <input name="q16" type="radio" value="yes" checked>
+                        <label for="yes">Yes</label><br>
+                    </div>
+                    <div>
+                        <input name="q16" type="radio" value="no">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Done extra courses?</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q17" type="radio" value="yes" checked>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input name="q17" type="radio" value="no">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Certifications</label>
+                <div class="radiobtn">
+                <div>
+                        <input name="q18" type="radio" value="shell programming" checked>
+                        <label for="shell programming">Shell Programming</label>
+                    </div>
+                    <div>
+                        <input name="q18" type="radio" value="Machine programming">
+                        <label for="Machine programming">Machine Learning</label>
+                    </div>
+                    <div>
+                        <input name="q18" type="radio" value="app development">
+                        <label for="app development">app development</label>
+                    </div>
+                    <div>
+                        <input name="q18" type="radio" value="python">
+                        <label for="python">python</label>
+                    </div>
+                    <div>
+                        <input name="q18" type="radio" value="r programming">
+                        <label for="r programming">r programming</label>
+                    </div>
+                    <div>
+                        <input name="q18" type="radio" value="information security">
+                        <label for="information security">information security</label>
+                    </div>
+                    <div>
+                        <input name="q18" type="radio" value="hadoop">
+                        <label for="hadoop">"hadoop</label>
+                    </div>
+                    <div>
+                        <input name="q18" type="radio" value="distro making">
+                        <label for="distro making">distro making</label>
+                    </div>
+                    <div>
+                        <input name="q18" type="radio" value="full stack">
+                        <label for="full stack">full stack</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Workshops</label>
+                <div class="radiobtn">
+                <div>
+                        <input name="q19" type="radio" value="cloud computing" checked>
+                        <label for="cloud computing">cloud computing</label>
+                    </div>
+                    <div>
+                        <input name="q19" type="radio" value="database security">
+                        <label for="database security">database security</label>
+                    </div>
+                    <div>
+                        <input name="q19" type="radio" value="web technologies">
+                        <label for="web technologies">web technologies</label>
+                    </div>
+                    <div>
+                        <input name="q19" type="radio" value="data science">
+                        <label for="data science">data science</label>
+                    </div>
+                    <div>
+                        <input name="q19" type="radio" value="testing">
+                        <label for="testing">testing</label>
+                    </div>
+                    <div>
+                        <input name="q19" type="radio" value="hacking">
+                        <label for="hacking">hacking</label>
+                    </div>
+                    <div>
+                        <input name="q19" type="radio" value="game development">
+                        <label for="game development">game development</label>
+                    </div>
+                    <div>
+                        <input name="q19" type="radio" value="system designing">
+                        <label for="system designing">system designing</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Talent tests taken?</label>
+                <div class="radiobtn">
+                <div>
+                        <input name="q20" type="radio" value="yes" checked>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input name="q20" type="radio" value="no">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Olympiads</label>
+                <div class="radiobtn">
+                <div>
+                        <input name="q21" type="radio" value="yes" checked>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input name="q21" type="radio" value="no">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Reading and writing skills</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q22" type="radio" value="excellent">
+                        <label for="excellent">excellent</label>
+                    </div>
+                    <div>
+                        <input name="q22" type="radio" value="medium" checked>
+                        <label for="medium">medium</label>
+                    </div>
+                    <div>
+                        <input name="q22" type="radio" value="poor">
+                        <label for="poor">poor</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Memory capability score</label>
+                <div class="radiobtn" name="q23">
+                    <div>
+                        <input name="q23" type="radio" value="excellent">
+                        <label for="excellent">excellent</label>
+                    </div>
+                    <div>
+                        <input name="q23" type="radio" value="medium" checked>
+                        <label for="medium">medium</label>
+                    </div>
+                    <div>
+                        <input name="q23" type="radio" value="poor">
+                        <label for="poor">poor</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Interested Subjects</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q24" type="radio" value="cloud computing" checked>
+                        <label for="cloud computing">cloud computing</label>
+                    </div>
+                    <div>
+                        <input name="q24" type="radio" value="networks">
+                        <label for="networks">networks</label>
+                    </div>
+                    <div>
+                        <input name="q24" type="radio" value="hacking">
+                        <label for="hacking">hacking</label>
+                    </div>
+                    <div>
+                        <input name="q24" type="radio" value="Computer Architecture">
+                        <label for="Computer Architecture">Computer Architecture</label>
+                    </div>
+                    <div>
+                        <input name="q24" type="radio" value="programming">
+                        <label for="programming">programming</label>
+                    </div>
+                    <div>
+                        <input name="q24" type="radio" value="parallel computing">
+                        <label for="parallel computing">parallel computing</label>
+                    </div>
+                    <div>
+                        <input name="q24" type="radio" value="IOT">
+                        <label for="IOT">IOT</label>
+                    </div>
+                    <div>
+                        <input name="q24" type="radio" value="data engineering">
+                        <label for="data engineering">data engineering</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Interested Career Area</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q25" type="radio" value="system developer" checked>
+                        <label for="system developer">system developer</label>
+                    </div>
+                    <div>
+                        <input name="q25" type="radio" value="Business process analyst">
+                        <label for="Business process analyst">Business process analyst</label>
+                    </div>
+                    <div>
+                        <input name="q25" type="radio" value="developer">
+                        <label for="developer">developer</label>
+                    </div>
+                    <div>
+                        <input name="q25" type="radio" value="testing">
+                        <label for="testing">testing</label>
+                    </div>
+                    <div>
+                        <input name="q25" type="radio" value="security">
+                        <label for="security">security</label>
+                    </div>
+                    <div>
+                        <input name="q25" type="radio" value="cloud computing">
+                        <label for="cloud computing">cloud computing</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Job or Higher Studies?</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q26" type="radio" value="job" checked>
+                        <label for="job">Job</label>
+                    </div>
+                    <div>
+                        <input name="q26" type="radio" value="higherstudies">
+                        <label for="higherstudies">Higher Studies</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">What type of company do you wan to settle in?</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q27" type="radio" value="Web Services" checked>
+                        <label for="Web Services">Web Services</label>
+                    </div>
+                    <div>
+                        <input name="q27" type="radio" value="SAaS services">
+                        <label for="SAaS services">SAaS services</label>
+                    </div>
+                    <div>
+                        <input name="q27" type="radio" value="Sales and Marketing">
+                        <label for="Sales and Marketing">Sales and Marketing</label>
+                    </div>
+                    <div>
+                        <input name="q27" type="radio" value="Testing and Maintainance Services">
+                        <label for="Testing and Maintainance Services">Testing and Maintainance Services</label>
+                    </div>
+                    <div>
+                        <input name="q27" type="radio" value="product development">
+                        <label for="product development">product development</label>
+                    </div>
+                    <div>
+                        <input name="q27" type="radio" value="BPA">
+                        <label for="BPA">BPA</label>
+                    </div>
+                    <div>
+                        <input name="q27" type="radio" value="Service Based">
+                        <label for="Service Based">Service Based</label>
+                    </div>
+                    <div>
+                        <input name="q27" type="radio" value="Product based">
+                        <label for="Product based">Product based</label>
+                    </div>
+                    <div>
+                        <input name="q27" type="radio" value="Cloud Services">
+                        <label for="Cloud Services">Cloud Services</label>
+                    </div>
+                    <div>
+                        <input name="q27" type="radio" value="Finance">
+                        <label for="Finance">Finance</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Taken inputs from seniors and elders?</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q28" type="radio" value="yes" checked>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input name="q28" type="radio" value="no">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Interested in games?</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q29" type="radio" value="yes" checked>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input name="q29" type="radio" value="no">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Book genres you find interesting</label>
+                <div class="radiobtn" id="q30">
+                        <input name="q30" type="radio" value="Prayer books" checked>
+                        <label for="Prayer books">Prayer books</label><br>
+                        <script>
+                            let docc=document.getElementById("q30");
+                            let bookslist = ['Childrens','Travel','Romance','Cookbooks','Self help','Drama','Math','Religion-Spirituality','Anthology','Trilogy','Autobiographies','Mystery','Diaries','Journals','History','Art','Dictionaries','Horror','Encyclopedias','Action and Adventure','Fantasy','Comics','Science fiction','Series','Guide','Biographies','Health','Satire','Science','Poetry'];
+                            bookslist.forEach(book => {
+                                docc.innerHTML+='<div><input name="q30" type="radio" value="'+book+'"><label for="'+book+'">'+book+'</label></div>';
+                            });
+                        </script>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Expected salary range</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q31" type="radio" value="salary" checked>
+                        <label for="salary">salary</label>
+                    </div>
+                    <div>
+                        <input name="q31" type="radio" value="Work">
+                        <label for="Work">Work</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">In a relationship?</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q32" type="radio" value="yes" checked>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input name="q32" type="radio" value="no">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Gentle or Tuff behaviour??</label>
+                <div class="radiobtn">
+                <div>
+                        <input name="q33" type="radio" value="gentle" checked>
+                        <label for="gentle">gentle</label>
+                    </div>
+                    <div>
+                        <input name="q33" type="radio" value="stubborn">
+                        <label for="stubborn">stubborn</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Management or Technical</label>
+                <div class="radiobtn">
+                <div>
+                        <input name="q34" type="radio" value="Management" checked>
+                        <label for="Management">Management</label>
+                    </div>
+                    <div>
+                        <input name="q34" type="radio" value="Technical">
+                        <label for="Technical">Technical</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">Salary/Work</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q35" type="radio" value="salary" checked>
+                        <label for="salary">salary</label>
+                    </div>
+                    <div>
+                        <input name="q35" type="radio" value="Work">
+                        <label for="Work">Work</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">hard/smart worker</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q36" type="radio" value="hard worker" checked>
+                        <label for="hard worker">hard worker</label>
+                    </div>
+                    <div>
+                        <input name="q36" type="radio" value="smart worker">
+                        <label for="smart worker">smart worker</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="radiobtn">DO you have experience working in a team?</label>
+                <div class="radiobtn">
+                <div>
+                        <input name="q37" type="radio" value="yes" checked>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input name="q37" type="radio" value="no">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            
+            <div>
+                <label for="radiobtn">Are you an introvert?</label>
+                <div class="radiobtn">
+                    <div>
+                        <input name="q38" type="radio" value="yes" checked>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input name="q38" type="radio" value="no">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            
+            <label for="radiobtn">Tell us about yourself?</label>
+            <div id="audio" onclick="myfunction()">
+                <i id="micon" style="display: none;" class="fas fa-microphone"></i>
+                <i id="micoff" style="display: block;" class="fas fa-microphone-slash"></i>
+            </div>
+            <div class="separator"></div>
+            <label for="radiobtn">What skills and strengths do you think you possess?</label>
+            <div id="audio" onclick="myfunction()">
+                <i id="micon" style="display: none;" class="fas fa-microphone"></i>
+                <i id="micoff" style="display: block;" class="fas fa-microphone-slash"></i>
+            </div>
+            <div class="separator"></div>
+            <label for="radiobtn">Where do you see yourself in five years?</label>
+            <div id="audio" onclick="myfunction()">
+                <i id="micon" style="display: none;" class="fas fa-microphone"></i>
+                <i id="micoff" style="display: block;" class="fas fa-microphone-slash"></i>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <label for="myfile">Upload your resume:</label>
+                <br>
+                <input type="file" class="fileupload" id="myfile" name="myfile">
+            </div>
+            <div class="separator"></div>
+            <div class="flexers">
+                <button type="reset" class="resetbtn">Reset</button>
+                <input class="submit" type="submit" value="Submit" >
+            </div>
+            
+        </form>
+        <script>
+                function myfunction(){
+                    let miccon = document.getElementById("micon");
+                    let miccoff = document.getElementById("micoff");
+                    if (miccon.style.display === "block"){
+                        miccon.style.display = "none";
+                        miccoff.style.display = "block";
+                        document.getElementById("audio").className.replace(" active", "");
+                    }else{
+                        miccoff.style.display = "none";
+                        miccon.style.display = "block";
+                        document.getElementById("audio").className += "active";
+                    }
+                }
+        </script>
+    </div>
+    <div class="bottom">
+        <p id="leftside"><br>Kelseekers, 2020</p>
+        <p id="rightside">Batch 2018-22<br>ISE, BMSIT&M<br>Karan, Ananth, Adarsh.</p>
+    </div>
+    
+</body>
+</html>
